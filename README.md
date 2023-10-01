@@ -13,6 +13,7 @@ The project is inspired by https://github.com/mfarache/micronaut-ms.
 - Beers can be added or removed from the tap list.
 
 ### Stretch Features
+- Testing.
 - Stock of each beer type is tracked.
 - Taxes are calculated on receipts.
 - Customers are given the option to tip their service staff.
