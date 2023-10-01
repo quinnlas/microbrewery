@@ -7,7 +7,7 @@ The project is inspired by https://github.com/mfarache/micronaut-ms.
 
 ## Features
 ### MVP Features
-- Customers can see what beer is available on the tap list.
+- ~~Customers can see what beer is available on the tap list.~~
 - Customers can order beer.
 - Customers can get a receipt after ordering multiple beers.
 - Beers can be added or removed from the tap list.
