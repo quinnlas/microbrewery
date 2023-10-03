@@ -7,7 +7,14 @@ public class Beer {
   private String name;
   private String taste;
   private int quantity;
+  private double price;
 
+  public double getPrice() {
+    return price;
+  }
+  public void setPrice(double price) {
+    this.price = price;
+  }
   public String getName() {
     return name;
   }
@@ -26,9 +33,10 @@ public class Beer {
   public void setQuantity(int quantity) {
     this.quantity = quantity;
   }
-  public Beer(String name, String taste, int quantity) {
+  public Beer(String name, String taste, int quantity, double price) {
     this.name = name;
     this.taste = taste;
     this.quantity = quantity;
+    this.price = price;
   }
 }

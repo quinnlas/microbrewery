@@ -17,9 +17,9 @@ public class TapListController {
 
   public TapListController() {
     this.beerStock = new ArrayList<Beer>(Arrays.asList(new Beer[] {
-        new Beer("Ball Bearing", "Tangy", 10000),
-        new Beer("10 Foot Pole", "Earthy", 10),
-        new Beer("Chwinga", "Magically Delicious", 1)
+        new Beer("Ball Bearing", "Tangy", 10000, 4.95),
+        new Beer("10 Foot Pole", "Earthy", 10, 11.02),
+        new Beer("Chwinga", "Magically Delicious", 1, 7.50)
     }));
 
   }
@@ -30,7 +30,7 @@ public class TapListController {
   }
 
   @Put("/pour")
-  public void pour(@Body PourInfo pourInfo) {
+  public double pour(@Body PourInfo pourInfo) {
     // find the beer in stock
     OptionalInt beerIndexOpt = IntStream.range(0, this.beerStock.size())
         .filter(i -> this.beerStock.get(i).getName().equals(pourInfo.name()))
@@ -42,5 +42,6 @@ public class TapListController {
     pouredBeer.setQuantity(pouredBeer.getQuantity() - 1);
     if (pouredBeer.getQuantity() <= 0)
       this.beerStock.remove(beerIndex);
+    return pouredBeer.getPrice();
   }
 }
