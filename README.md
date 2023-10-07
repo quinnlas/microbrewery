@@ -1,7 +1,7 @@
 # Microbrewery
-A project for learning Micronaut and Spring. A microservice architecture application that supports functions of a brewery such as serving customers, generating bills, and rotating a tap list. It's funny because it has micro in the name.
+A project for learning Micronaut and Spring. A microservice architecture application that supports functions of a brewery such as serving customers, generating bills, and rotating a tap list.
 
-The project is inspired by https://github.com/mfarache/micronaut-ms.
+This project was inspired by https://github.com/mfarache/micronaut-ms.
 
 ## Features
 ### MVP Features
@@ -17,7 +17,6 @@ The project is inspired by https://github.com/mfarache/micronaut-ms.
 - Customers are given the option to tip their service staff.
 
 ## On Microservices
-I am by no means an expert in microservices, these are just some points that have come up in my reading and make sense to me.
 
 ### Links
 The "definitive article" on microservices:
@@ -49,13 +48,19 @@ I am using a monorepo approach since I don't want to clutter up my Github with t
 
 ### Determining microservice boundaries
 I will be following the process in the Microsoft article above.
-1. Create a domain diagram. Whiteboard preferred. I do not have a whiteboard, so I did this in a notebook:
+1. Create a domain diagram:
 
-<img src="design/Domain%20Diagram.jpg" width="500">
+<img src="design/Domain%20Diagram.svg" width="500">
 
 2. Determine the bounded contexts. These are areas which share similar definitions of common items. In this application, the primary common item is beer. So I listed the qualities of beer, and then which part of the domain diagram cares about each quality. I used this to inform the decision of how to draw the bounded contexts.
 
-<img src="design/Bounded%20Contexts.jpg" width="500">
+| Beer Qualities | Relevant Domains |
+| --- | --- |
+| price | Ordering, Paying, Taxes |
+| taste | Brewing, Ordering |
+| quantity | All |
+
+<img src="design/Bounded%20Contexts.svg" width="500">
 
 3. Determine microservices. In a more complex application, there are steps that I have skipped here. I will simply use the bounded contexts as my microservices, as there are only 3. That gives us 3 microservices, which I have named Inventory, Serving, and Ordering. The names are simply the key domain of each context.
 
@@ -67,3 +72,6 @@ This process gives us the following result:
 | Inventory    | Micronaut  | Manage the current tap list and stock. |
 | Serving      | Micronaut  | Take orders from the customer and fulfill them from existing inventory. |
 | Ordering     | Spring     | Show the tap list to the customer, allow them to make and pay for orders. |
+
+### Requests
+<img src="design/Requests.svg" width="500">

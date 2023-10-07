@@ -1,0 +1,18 @@
+// made with sequencediagram.org
+title Requests
+
+// set order
+participant Client
+participant Ordering
+participant Serving
+==View Tap List==
+Client->Ordering:GET /tap_list
+Ordering->Inventory:GET /tap_list
+==Place an Order==
+Client->Ordering:POST /order
+Ordering->Serving:POST /order
+Serving->Inventory:PUT /pour
+Serving->Serving:Add to tab
+==Make a Payment==
+Client->Ordering: POST /pay
+Ordering->Serving: POST /pay
