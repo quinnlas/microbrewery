@@ -1,8 +1,6 @@
 # Microbrewery
 A project for learning Micronaut and Spring. A microservice architecture application that supports functions of a brewery such as serving customers, generating bills, and rotating a tap list. It's funny because it has micro in the name.
 
-Writing the microservices in different technologies to test the claimed benefit that microservices allow that, while also learning both technologies.
-
 The project is inspired by https://github.com/mfarache/micronaut-ms.
 
 ## Features
@@ -14,7 +12,7 @@ The project is inspired by https://github.com/mfarache/micronaut-ms.
 
 ### Stretch Features
 - Testing.
-- Stock of each beer type is tracked.
+- ~~Stock of each beer type is tracked.~~
 - Taxes are calculated on receipts.
 - Customers are given the option to tip their service staff.
 
@@ -36,7 +34,7 @@ https://learn.microsoft.com/en-us/azure/architecture/microservices/model/domain-
 - Using different technologies. Due to the technology agnostic communication layer (HTTP, MQ, or otherwise), each microservice can be written in the most appropriate technology for its needs. In this project, I am using Spring for some microservices and Micronaut for others due to the need for me to learn both frameworks.
 #### Cons
 - Complexity. Deploying multiple services and supporting some communication layer between them is far more complex than deploying a monolith which communicates with itself in process.
-- Speed of inter-module communication. Since communication between modules is now an I/O activity, there is a higher performance cost. This leads to a tradeoff between granularity and throughput. Think making several database queries versus calling a stored procedure.
+- Speed of inter-module communication. Since communication between modules is now an I/O activity, there is a higher performance cost. This leads to a tradeoff between granularity and throughput. Think making several database queries versus calling a stored procedure. There can also be a significant performance cost simply from encoding/decoding data (serializing/deserializing JSON for instance).
 
 ### How to divide into microservices?
 The first challenge of a project like this would be to decide which microservices to make. Some reading gives a few guidelines:
