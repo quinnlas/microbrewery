@@ -17,8 +17,8 @@ The Micronaut Serving and Inventory services can be started with:
 ## Features
 ### MVP Features
 - ~~Customers can see what beer is available on the tap list.~~
-- Customers can order beer.
-- Customers can get a receipt after ordering multiple beers.
+- ~~Customers can order beer.~~
+- ~~Customers can pay their tab after ordering multiple beers.~~
 - Testing.
 
 ### Stretch Features
