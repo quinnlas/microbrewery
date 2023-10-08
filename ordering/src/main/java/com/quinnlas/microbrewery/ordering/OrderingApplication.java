@@ -30,4 +30,10 @@ public class OrderingApplication {
       // send the order to Serving
       return restTemplate.postForObject("http://localhost:8081/order", body, String.class);
     }
+
+    @PostMapping("/pay")
+    public double pay(@RequestBody Object body, RestTemplate restTemplate) {
+      // send the order to Serving
+      return restTemplate.postForObject("http://localhost:8081/order/pay", body, Double.class);
+    }
 }
