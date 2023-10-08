@@ -3,15 +3,26 @@ A project for learning Micronaut and Spring. A microservice architecture applica
 
 This project was inspired by https://github.com/mfarache/micronaut-ms.
 
+## Running
+The Spring Ordering service can be started with:
+```
+./gradlew bootRun
+```
+
+The Micronaut Serving and Inventory services can be started with:
+```
+./gradlew run
+```
+
 ## Features
 ### MVP Features
 - ~~Customers can see what beer is available on the tap list.~~
 - Customers can order beer.
 - Customers can get a receipt after ordering multiple beers.
-- Beers can be added or removed from the tap list.
+- Testing.
 
 ### Stretch Features
-- Testing.
+- Beers can be added or removed from the tap list.
 - ~~Stock of each beer type is tracked.~~
 - Taxes are calculated on receipts.
 - Customers are given the option to tip their service staff.
