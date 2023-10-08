@@ -33,11 +33,14 @@ public class OrderController {
 
     // add the beer to the tab if it doesn't exist
     Beer beer = new Beer(beerName, price);
-    Integer quantity = tab.beerQuantities.get(beer);
-    if (quantity == null) quantity = 1;
-    else quantity += 1;
-    tab.beerQuantities.put(beer, quantity);
+    tab.addBeer(beer);
 
     return beerName;
+  }
+
+  @Post("/pay")
+  public double pay(String customer, double amount) {
+    Tab tab = this.customerTabs.get(customer);
+    return tab.makePayment(amount);
   }
 }
